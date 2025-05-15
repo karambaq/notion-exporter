@@ -222,5 +222,4 @@ class PropertyConverter:
         """
         Converts a button property to a Markdown string.
         """
-        print(f'Button: {property_item=}')
         return property_item['id']
