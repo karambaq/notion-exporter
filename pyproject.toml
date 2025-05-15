@@ -24,8 +24,8 @@ keywords = [
 ]
 dependencies = [
     "notion-client",
-    "tenacity",
     "notion2md",
+    "tenacity",
 ]
 
 [project.urls]
@@ -51,3 +51,6 @@ packages = [
 
 [tool.black]
 line-length = 120
+
+[tool.uv.sources]
+notion2md = { git = "https://github.com/karambaq/notion2md" }
