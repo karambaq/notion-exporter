@@ -34,6 +34,8 @@ class PropertyConverter:
             "status": self.status,
             "title": self.title,
             "url": self.url,
+            "unique_id": self.unique_id,
+            "button": self.button,
         }
         self.notion_exporter = notion_exporter
 
@@ -206,3 +208,19 @@ class PropertyConverter:
         """
         url = property_item["url"] if property_item["url"] else ""
         return url
+
+    @staticmethod
+    def unique_id(property_item: dict) -> str:
+        """
+        Converts a unique_id property to a Markdown string.
+        """
+        unique_id = property_item["unique_id"] if property_item["unique_id"] else ""
+        return unique_id['prefix']
+
+    @staticmethod
+    def button(property_item: dict) -> str:
+        """
+        Converts a button property to a Markdown string.
+        """
+        print(f'Button: {property_item=}')
+        return property_item['id']

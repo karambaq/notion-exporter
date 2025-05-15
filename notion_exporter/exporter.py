@@ -180,6 +180,7 @@ class NotionExporter:
         markdown_blocks_with_child_tasks = []
         child_tasks = []
         for block in blocks:
+            print(f'\n\n{block=}')
             is_child_page = block["type"] == "child_page"
             is_child_database = block["type"] == "child_database"
             is_list_item = block["type"] in ["bulleted_list_item", "numbered_list_item", "to_do", "toggle"]
@@ -189,6 +190,7 @@ class NotionExporter:
                 indent=parent_is_list_item and is_list_item,
                 indent_level=indent_level,
             )
+            print(f'{markdown_block=}')
             if is_child_page:
                 child_page_ids.add(block["id"])
             if is_child_database:
